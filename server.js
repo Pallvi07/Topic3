@@ -10,6 +10,10 @@ app.get('/', function (req, res) {
     res.sendFile(`${base}/device-list.html`);
   });
 
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});
+
 app.get('/register-device', (req, res) => {
     res.sendFile(`${base}/register-device.html`);
   });
@@ -20,8 +24,4 @@ app.get('/iot-applications', (req, res) => {
 
 app.get('*', (req, res) => {
     res.sendFile(`${base}/404.html`);
-  });
-
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
   });

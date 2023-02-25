@@ -1,6 +1,7 @@
 $('#navbar').load('navbar.html');
 
 const devices = JSON.parse(localStorage.getItem('devices')) || [];
+localStorage.setItem('devices', JSON.stringify(devices));
 
 devices.forEach(function(device) {
     $('#devices tbody').append(`
@@ -16,5 +17,5 @@ devices.forEach(function(device) {
     const name = $('#name').val();
     devices.push({ user, name });
     localStorage.setItem('devices', JSON.stringify(devices));
-    location.href = '/';
+    location.href = 'device-list.html';
   });
